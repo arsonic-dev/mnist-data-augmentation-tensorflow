@@ -42,6 +42,15 @@ All augmentations are applied **on-the-fly** using `tf.data` pipelines.
 
 Data augmentation improved generalization and reduced overfitting despite slower convergence.
 
+## 📊 Results
+
+### Augmentation Examples
+![Augmentation Examples](results/augmentation_examples.png)
+
+### Accuracy Comparison
+![Accuracy Comparison](results/accuracy_comparison.png)
+
+
 ---
 
 ##  How to Run
