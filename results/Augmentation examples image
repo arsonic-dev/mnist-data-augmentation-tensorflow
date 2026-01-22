@@ -1,0 +1,28 @@
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import PIL.Image
+
+# Load image
+image_path = tf.keras.utils.get_file("cat.jpg")
+image_string = tf.io.read_file(image_path)
+image = tf.image.decode_jpeg(image_string, channels=3)
+
+# Augmentation
+flipped = tf.image.flip_left_right(image)
+bright = tf.image.adjust_brightness(image, 0.4)
+
+# Plot
+plt.figure(figsize=(8,4))
+plt.subplot(1,2,1)
+plt.title("Original")
+plt.imshow(image)
+plt.axis("off")
+
+plt.subplot(1,2,2)
+plt.title("Augmented")
+plt.imshow(bright)
+plt.axis("off")
+
+plt.tight_layout()
+plt.savefig("augmentation_examples.png")
+plt.show()
